@@ -1,26 +1,28 @@
-import Link from 'next/link';
+import ImgHelper from "@/helper/img_helper";
+import Image from "next/image";
+import Link from "next/link";
 
 const products = [
   {
-    imgClass: 't1',
-    emoji: '👕',
-    category: 'Flagship · All Genders',
+    imgClass: "t1",
+    img: ImgHelper.products.asults,
+    category: "Flagship · All Genders",
     name: "Adults Garments",
-    desc: 'T-shirts, polos, sweatshirts, hoodies & activewear in premium cotton blends. Bulk export and private label orders welcome.',
+    desc: "T-shirts, polos, sweatshirts, hoodies & activewear in premium cotton blends. Bulk export and private label orders welcome.",
   },
   {
-    imgClass: 't2',
-    emoji: '🧒',
-    category: 'Kids · 2–14 Years',
+    imgClass: "t2",
+    img: ImgHelper.products.kids,
+    category: "Kids · 2–14 Years",
     name: "Children's Wear",
-    desc: 'Bright, durable, and comfortable garments for toddlers to teens in export-grade fabric.',
+    desc: "Bright, durable, and comfortable garments for toddlers to teens in export-grade fabric.",
   },
   {
-    imgClass: 't3',
-    emoji: '🍼',
-    category: 'Newborn · 0–24 Months',
+    imgClass: "t3",
+    img: ImgHelper.products.baby,
+    category: "Newborn · 0–24 Months",
     name: "Infants' Wear",
-    desc: 'Hypoallergenic, soft-touch fabrics. Rompers, bodysuits & sets for the tiniest wearers.',
+    desc: "Hypoallergenic, soft-touch fabrics. Rompers, bodysuits & sets for the tiniest wearers.",
   },
 ];
 
@@ -33,13 +35,22 @@ export default function Products() {
             <span className="sec-lbl">Our Range</span>
             <h2 className="sec-title">What We Offer</h2>
           </div>
-          <Link href="#contact" className="btn-b">Request Catalogue →</Link>
+          <Link href="#contact" className="btn-b">
+            Request Catalogue →
+          </Link>
         </div>
 
         <div className="pr-grid">
           {products.map((p, i) => (
             <div className="pc rv" key={i}>
-              <div className={`pc-img ${p.imgClass}`}>{p.emoji}</div>
+              <div className={`pc-img ${p.imgClass}`}>
+                <Image
+                  src={p.img}
+                  alt={p.name}
+                  fill
+                  style={{ objectFit: "cover", opacity: 1 }}
+                />
+              </div>
               <div className="pc-body">
                 <div className="pc-cat">{p.category}</div>
                 <div className="pc-name">{p.name}</div>
