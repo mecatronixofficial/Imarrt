@@ -18,7 +18,7 @@ export default function About() {
           <div className="ab-box">
             <Image
               src={ImgHelper.about.banner}
-              alt={ImgHelper.about.banner}
+              alt="About banner"
               fill
               style={{ objectFit: "cover", opacity: 1 }}
             />
