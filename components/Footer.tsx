@@ -1,5 +1,7 @@
 import IconHelper from "@/helper/icon_helper";
+import ImgHelper from "@/helper/img_helper";
 import { Socialmedia } from "@/helper/Socialmedia";
+import Image from "next/image";
 import Link from "next/link";
 
 const products = [
@@ -31,7 +33,11 @@ const contact = [
     label: "www.imarrt.com",
     href: "http://www.imarrt.com",
   },
-  { ico: IconHelper.contact.location, label: "Tirupur – 641 001", href: "https://maps.app.goo.gl/MxhjV3xTvFSHckwU6" },
+  {
+    ico: IconHelper.contact.location,
+    label: "Tirupur – 641 001",
+    href: "https://maps.app.goo.gl/MxhjV3xTvFSHckwU6",
+  },
 ];
 
 export default function Footer() {
@@ -41,7 +47,19 @@ export default function Footer() {
         <div className="ft-top">
           {/* Brand */}
           <div>
-            <span className="ft-logo">I-Marrt</span>
+            <Link href="#top">
+              <div className="f-logobg">
+                <Image
+                  src={ImgHelper.logo.main}
+                  alt="logo"
+                  className="f-logo"
+                  width={120}
+                  height={40}
+                  priority
+                />
+              </div>
+            </Link>
+
             <p className="ft-desc">
               Premium readymade garments from the heart of Tirupur. Trusted by
               brands across 35+ countries for quality, reliability, and
@@ -52,7 +70,7 @@ export default function Footer() {
               Tirupur, Tamil Nadu — India&apos;s Knitwear Capital
             </span>
             <div className="footer">
-              <Socialmedia/>
+              <Socialmedia />
             </div>
           </div>
 
