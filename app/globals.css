@@ -83,13 +83,29 @@ nav {
 }
 
 .n-logo {
-  font-family: var(--font-dancing);
-  font-size: 2.1rem;
-  font-weight: 700;
-  color: var(--B);
-  text-decoration: none;
+  display: block;
+  width: 120px;       /* control size */
+  height: auto;
   position: relative;
   z-index: 1001;
+}
+
+.f-logobg {
+  background-color: var(--Y);
+  padding: 6px 10px;     /* gives space around logo */
+  border-radius: 6px;    /* optional */
+  display: inline-block;
+}
+
+.f-logo {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+.f-logobg:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
 }
 
 .n-ul {

@@ -7,9 +7,13 @@ import Sweatshirts from "@/public/imgs/and_13023063-711a-40f3-857a-183762858a0c.
 import KidsWear from "@/public/imgs/fancy-kids-wear.webp";
 import Infants from "@/public/imgs/301056129BLUE_01_800x.webp";
 import PoloShirts from "@/public/imgs/K90240s.webp";
-import Hero from "@/public/imgs/family-buying-clothes-shop.webp"
+import Hero from "@/public/imgs/family-buying-clothes-shop.webp";
+import main from "@/public/logo/slazzer-preview-5rlku.webp";
 
 const ImgHelper = {
+  logo: {
+    main,
+  },
   Hero: {
     Hero,
   },
