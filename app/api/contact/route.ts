@@ -1,24 +1,35 @@
 export const runtime = "nodejs";
-import * as nodemailer from "nodemailer";
+
+import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  const body = await req.json();
+  type ContactForm = {
+    name: string;
+    email: string;
+    phone?: string;
+    company?: string;
+    category?: string;
+    quantity?: string;
+    message?: string;
+  };
+
+  const body: ContactForm = await req.json();
 
   const { name, email, phone, company, category, quantity, message } = body;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "weboneycbe@gmail.com",
-      pass: "ldkd dtxp cmiz ysmg",
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: email,
-      to: "manipkm0004@gmail.com",
+      from: `"I-Marrt Enquiry" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_TO,
       subject: `New Enquiry — ${name} (${company || "Individual"})`,
       html: `
 <!DOCTYPE html>
@@ -112,7 +123,6 @@ export async function POST(req: Request) {
 </html>
 `,
     });
-
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json({ success: false });
