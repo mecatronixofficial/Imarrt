@@ -1,3 +1,5 @@
+import ImgHelper from "@/helper/img_helper";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
@@ -41,6 +43,7 @@ export default function Hero() {
 
         <div className="h-right">
           <div style={{ position: "relative" }}>
+            {/* <Image src={ImgHelper.Hero.Hero} alt="hero" fill style={{ objectFit: "cover" , borderRadius: 10 }}/> */}
             <div className="h-card">
               <span className="clogo">I-Marrt</span>
               <p>
