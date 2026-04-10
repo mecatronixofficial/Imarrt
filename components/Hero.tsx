@@ -7,15 +7,11 @@ export default function Hero() {
     <section className="headhero">
       <div className="hero">
         <div className="h-left">
-          <div className="h-tag">
-            ✦ Tirupur, Tamil Nadu — Knitwear Capital of India
-          </div>
           <h1 className="h-title">I-Marrt</h1>
           <p className="h-sub">Premium Readymade Garments</p>
           <p className="h-desc">
             Retailer, exporter &amp; supplier of high-quality knit and woven
-            garments — infants, children &amp; adults. Based in Rayapuram,
-            Tirupur.
+            garments — infants, children &amp; adults. Based in Rayapuram.
           </p>
           <div className="h-btns">
             <Link href="#products" className="btn-b">
@@ -27,8 +23,8 @@ export default function Hero() {
           </div>
           <div className="h-stats">
             <div>
-              <div className="st-num">35+</div>
-              <div className="st-lbl">Countries Exported</div>
+              <div className="st-num">B2C</div>
+              <div className="st-lbl">Corporate Orders</div>
             </div>
             <div>
               <div className="st-num">100%</div>
@@ -43,10 +39,10 @@ export default function Hero() {
 
         <div className="h-right">
           <div style={{ position: "relative" }}>
-            {/* <Image src={ImgHelper.Hero.Hero} alt="hero" fill style={{ objectFit: "cover" , borderRadius: 10 }}/> */}
+            <Image src={ImgHelper.Hero.Hero} alt="hero" fill style={{ objectFit: "cover" , borderRadius: 10 }}/>
             <div className="h-card">
               <span className="clogo">I-Marrt</span>
-              <p>
+              <p className="">
                 Your trusted garment export partner from the heart of Tirupur,
                 India&apos;s knitwear capital.
               </p>
@@ -58,7 +54,7 @@ export default function Hero() {
             </div>
             <div className="fc fc2">
               <span className="fn">35+</span>
-              Export Countries
+             Garment Distribution
             </div>
           </div>
         </div>

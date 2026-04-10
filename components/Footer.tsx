@@ -117,19 +117,38 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="ft-btm">
-          <span>© 2026 iMarrt. All rights reserved.</span>
-          <span className="ft-made">
-            Built by{" "}
-            <Link href="https://www.mecatronix.one" target="_blank">
-              Mecatronix
-            </Link>
-            {/* <span className="ft-sep" />
-            <Link href="https://www.mecatronix.one" target="_blank">
-              mecatronix.one
-            </Link> */}
-          </span>
-        </div>
+      <div className="ft-btm">
+  <span>© 2026 iMarrt. All rights reserved.</span>
+
+  <span className="ft-made">
+    Built by{" "}
+    
+    <Link
+      href="https://www.mecatronix.one"
+      target="_blank"
+      className="ft-link"
+    >
+      <span className="ft-brand">
+        
+        {/* Logo */}
+        <Image
+          src={ImgHelper.mecatronix.mecalogo}
+          alt="Mecatronix"
+          width={20}
+          height={20}
+          className="ft-logo"
+        />
+
+        {/* Text */}
+        <span>
+          <span className="meca">Meca</span>
+          <span className="tronix">tronix</span>
+        </span>
+
+      </span>
+    </Link>
+  </span>
+</div>
       </footer>
       {/* ── CTA strip ── */}
       {/* <div className="ft-strip">
