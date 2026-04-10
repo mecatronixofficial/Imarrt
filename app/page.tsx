@@ -9,7 +9,7 @@ import Categories from '@/components/Categories';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ScrollRevealProvider from '@/components/ScrollRevealProvider';
-import LogoPage from '@/components/logopage';
+import LogoPage from '@/components/LogoPage';
 
 
 
