@@ -2,10 +2,14 @@
 
 import { useEffect, useState } from "react";
 import IconHelper from "@/helper/icon_helper";
+import ImgHelper from "./img_helper";
+import Image from "next/image";
 
-export default function ScrollTop() {
+export default function FloatingButtons() {
   const [show, setShow] = useState(false);
+
   const ArrowUp = IconHelper.arrow?.up || (() => <span>↑</span>);
+  const WhatsApp = ImgHelper.Icons.whtasapp || (() => <span>💬</span>);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +24,30 @@ export default function ScrollTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  if (!show) return null;
-
   return (
-    <button className="scroll-top" onClick={scrollToTop}>
-      <ArrowUp size={24} />
-    </button>
+    <div className="floating-wrap">
+      
+      {/* WhatsApp (Always visible) */}
+      <a
+        href="https://wa.me/918675450005" // 👉 change number
+        target="_blank"
+        className="float-btnwp whatsapp"
+      >
+         <Image
+          src={WhatsApp}
+          alt="Mecatronix"
+          width={40}
+          height={40}
+        />
+      </a>
+
+      {/* Scroll Top (only after scroll) */}
+      {show && (
+        <button className="float-btn up" onClick={scrollToTop}>
+          <ArrowUp size={22} />
+        </button>
+      )}
+
+    </div>
   );
 }

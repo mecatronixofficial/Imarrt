@@ -8,17 +8,17 @@ const contactInfo = [
     ico: IconHelper.contact.location,
     label: "Address",
     value:
-      "#11/4, Rayapuram West St, Opp. ICICI/SBI ATM,\nBehind Santha Bakery, Tirupur – 641 001",
+      "#11/4, Rayapuram West St, Opp. ICICI/SBI ATM, Tirupur – 641 001",
   },
   {
     ico: IconHelper.contact.call,
     label: "Phone",
-    value: "+91 86754 50005",
+    value: "+91 86754 50005\n+91 9965510005",
   },
   {
     ico: IconHelper.contact.mail,
     label: "Email",
-    value: "info@imarrt.com",
+    value: "info@imarrt.com\nsales@imarrt.com",
   },
   {
     ico: IconHelper.contact.openbox,
@@ -37,12 +37,13 @@ export default function Contact() {
     const form = e.currentTarget;
     const data = {
       name: (form[0] as HTMLInputElement).value,
-      company: (form[1] as HTMLInputElement).value,
-      email: (form[2] as HTMLInputElement).value,
-      phone: (form[3] as HTMLInputElement).value,
-      category: (form[4] as HTMLSelectElement).value,
-      quantity: (form[5] as HTMLInputElement).value,
-      message: (form[6] as HTMLTextAreaElement).value,
+      Address: (form[1] as HTMLInputElement).value,
+      company: (form[2] as HTMLInputElement).value,
+      category: (form[3] as HTMLSelectElement).value,
+      email: (form[4] as HTMLInputElement).value,
+      phone: (form[5] as HTMLInputElement).value,
+      quantity: (form[6] as HTMLInputElement).value,
+      message: (form[7] as HTMLTextAreaElement).value,
     };
 
     const res = await fetch("/api/contact", {
@@ -69,7 +70,7 @@ export default function Contact() {
           >
             Get In Touch
           </span>
-          <h2 className="sec-title">Start Your Order Today</h2>
+          <h2 className="sec-title">Place Your Order Today</h2>
           <p className="sec-body" style={{ marginBottom: "34px" }}>
             Ready to source premium garments from Tirupur? Our team responds
             within 24 hours with pricing and details.
@@ -114,8 +115,21 @@ export default function Contact() {
                   <input type="text" placeholder="Full name" required />
                 </div>
                 <div className="cf-f">
+                  <label> Your Address</label>
+                  <input type="text" placeholder="Your Address & Pincode" />
+                </div>
+                <div className="cf-f">
                   <label>Company</label>
                   <input type="text" placeholder="Brand / Company" />
+                </div>
+                 <div className="cf-f">
+                  <label>Category</label>
+                  <select>
+                    <option>Adults Garments</option>
+                    <option>Children&apos;s Wear</option>
+                    <option>Infants Wear</option>
+                    <option>Mixed / Custom</option>
+                  </select>
                 </div>
                 <div className="cf-f cf-full">
                   <label>Email Address</label>
@@ -125,17 +139,9 @@ export default function Contact() {
                   <label>Phone Number</label>
                   <input type="tel" placeholder="+91 00000 00000" />
                 </div>
+               
                 <div className="cf-f">
-                  <label>Category</label>
-                  <select>
-                    <option>Adults Garments</option>
-                    <option>Children&apos;s Wear</option>
-                    <option>Infants Wear</option>
-                    <option>Mixed / Custom</option>
-                  </select>
-                </div>
-                <div className="cf-f">
-                  <label>Quantity (pcs)</label>
+                  <label>Required Quantity (pcs)</label>
                   <input type="text" placeholder="e.g. 500" />
                 </div>
                 <div className="cf-f cf-full">

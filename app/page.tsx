@@ -9,6 +9,9 @@ import Categories from '@/components/Categories';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ScrollRevealProvider from '@/components/ScrollRevealProvider';
+import LogoPage from '@/components/logopage';
+
+
 
 export default function Home() {
   return (
@@ -21,10 +24,13 @@ export default function Home() {
         <Products />
         <Strengths />
         <Process />
+        <LogoPage />
         <Categories />
         <Contact />
       </main>
       <Footer />
     </ScrollRevealProvider>
+    
+
   );
 }

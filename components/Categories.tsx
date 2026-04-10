@@ -10,7 +10,7 @@ const categories = [
   },
   {
     img: ImgHelper.category.Sweatshirts,
-    name: "Sweatshirts",
+    name: "Wintershirts",
     sub: "Hoodies & crewnecks",
     bg: "linear-gradient(160deg,#222,#444)",
   },
@@ -32,9 +32,29 @@ const categories = [
     sub: "Men's & Women's",
     bg: "linear-gradient(160deg,#F5C800,#A07800)",
   },
+  {
+    img: ImgHelper.category.nightwear,
+    name: "Nightwear",
+    sub: "Women's",
+    bg: "linear-gradient(160deg,#F5C800,#A07800)",
+  },
+  {
+    img: ImgHelper.category.sizes,
+    name: "7xl Sizes",
+    sub: "Men's & Women's",
+    bg: "linear-gradient(160deg,#F5C800,#A07800)",
+  },
+  {
+    img: ImgHelper.category.Sleeves,
+    name: "Sleeves",
+    sub: "Women's",
+    bg: "linear-gradient(160deg,#F5C800,#A07800)",
+  },
 ];
 
 export default function Categories() {
+  const loopCategories = [...categories, ...categories];
+
   return (
     <div className="ct-wrap">
       <div className="ct-inner">
@@ -43,31 +63,33 @@ export default function Categories() {
           <h2 className="sec-title">Garment Categories</h2>
         </div>
 
-        <div className="ct-grid">
-          {categories.map((c, i) => (
-            <div className="ct-card rv" key={i}>
-              <div
-                className="ct-bg"
-                style={{
-                  background: c.bg,
-                  position: "absolute",
-                  inset: 0,
-                }}
-              >
-                <Image
-                  src={c.img}
-                  alt={c.name}
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
+        <div className="ct-slider">
+          <div className="ct-track">
+            {loopCategories.map((c, i) => (
+              <div className="ct-card rv" key={i}>
+                <div
+                  className="ct-bg"
+                  style={{
+                    background: c.bg,
+                    position: "absolute",
+                    inset: 0,
+                  }}
+                >
+                  <Image
+                    src={c.img}
+                    alt={c.name}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
 
-              <div className="ct-ov">
-                <div className="ct-name">{c.name}</div>
-                <div className="ct-sub">{c.sub}</div>
+                <div className="ct-ov">
+                  <div className="ct-name">{c.name}</div>
+                  <div className="ct-sub">{c.sub}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -1,10 +1,15 @@
 import ImgHelper from "@/helper/img_helper";
+import Link from "next/dist/client/link";
 import Image from "next/image";
 
 const features = [
-  "Retailer, Exporter & Supplier of Readymade Garments",
-  "Knit & Woven garments across all age groups",
-  "Custom buyer labels & private branding accepted",
+  "Manufacturer & Supplier of Uniforms and Readymade Garments",
+  "Customized Orders Available (School, Corporate & Industrial Uniforms)",
+  "Export Quality Garments with International Standards",
+  "Branded & Unbranded Stocklots Available",
+  "Knit & Woven Garments for All Age Groups",
+  "Private Labeling & Custom Branding Accepted",
+  "Bulk Orders with Competitive Pricing",
   "Located at Rayapuram, Tirupur — 641 001",
   "+91 86754 50005 · info@imarrt.com",
 ];
@@ -17,7 +22,7 @@ export default function About() {
         <div className="ab-vis rv">
           <div className="ab-box">
             <Image
-              src={ImgHelper.about.banner}
+              src={ImgHelper.about.garmemt}
               alt="About banner"
               fill
               style={{ objectFit: "cover", opacity: 1 }}
@@ -26,14 +31,23 @@ export default function About() {
           <div className="ab-badge">
             <span className="ab-bnum">35+</span>
             <span className="ab-btxt">
-              Export
+              Dispatch
               <br />
               Countries
             </span>
           </div>
           <div className="ab-icard">
-            <strong>Vijayaraj.P</strong>
-            <span>Founder &amp; Director</span>
+            <Link href="#top">
+        <Image
+          src={ImgHelper.logo.main}
+          alt="logo"
+          className="n-logo"
+          width={120} // ✅ required in Next.js
+          height={40} // adjust based on your logo
+          priority
+        />
+      </Link>
+
           </div>
         </div>
 
