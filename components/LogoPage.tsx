@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import ImgHelper from "@/helper/img_helper";
 
 const logos = [
@@ -8,28 +7,24 @@ const logos = [
     category: "Mens Wear",
     img: ImgHelper.logo.bosindicus,
     desc: "Modern menswear identity crafted for quality, comfort, and style.",
-  
   },
   {
     name: "INDXO",
     category: "Mens Wear",
     img: ImgHelper.logo.indxo,
     desc: "A bold menswear brand focused on premium apparel collections.",
-  
   },
   {
     name: "Feminista",
     category: "Womens Wear",
     img: ImgHelper.logo.feminista,
     desc: "Elegant women’s fashion branding designed for modern trends.",
-  
   },
   {
     name: "DreamAura",
     category: "Womens Night Wear",
     img: ImgHelper.logo.dreamaura,
     desc: "Soft, stylish, and comfort-focused nightwear identity for women.",
-
   },
   {
     name: "Vandoos",
@@ -41,14 +36,14 @@ const logos = [
 
 export default function LogoPage() {
   return (
-    <section className="logo-page">
+    <section className="logo-page" id="ourbrand">
       <div className="logo-bg-glow logo-bg-glow1" />
       <div className="logo-bg-glow logo-bg-glow2" />
 
       <div className="logo-container">
         <div className="logo-head">
-          <span className="logo-badge">Our Brand Portfolio</span>
-          <h1 className="logo-title">Logos That Define Our Product Identity</h1>
+          <span className="sec-lbl">Our Brand Portfolio</span>
+          <h1 className="sec-title">Logos That Define Our Product Identity</h1>
           <p className="logo-sub">
             Discover our curated brand lineup across menswear, womenswear,
             nightwear, kidswear, and corporate textile identity.
@@ -76,13 +71,13 @@ export default function LogoPage() {
               </div>
 
               <div className="logo-card-body">
-                <h3 className="logo-name">{item.name}</h3>
+                <h3 className="sec-title">{item.name}</h3>
                 <p className="logo-desc">{item.desc}</p>
 
                 <div className="">
-                  <Link href="#products" className="logo-btn">
+                  <a href="#products" className="logo-btn">
                     View Brands
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

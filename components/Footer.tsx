@@ -15,18 +15,24 @@ const company = [
   { label: "About Us", href: "#about" },
   { label: "Our Process", href: "#process" },
   { label: "Why iMarrt", href: "#strengths" },
+  { label: "Our Brand", href: "#ourbrand" },
+  { label: "Our collections", href: "#collections" },
   { label: "Contact", href: "#contact" },
 ];
 const contact = [
   {
     ico: IconHelper.contact.call,
     label: "+91 86754 50005",
+    label2: "+91 9965510005",
     href: "tel:+918675450005",
+    href2: "tel:+919965510005",
   },
   {
     ico: IconHelper.contact.mail,
     label: "info@imarrt.com",
+    label2: "sales@imarrt.com",
     href: "mailto:info@imarrt.com",
+    href2: "mailto:sales@imarrt.com",
   },
   {
     ico: IconHelper.contact.openbox,
@@ -109,7 +115,10 @@ export default function Footer() {
                     <span className="ft-ico">
                       <Icon size={13} color="var(--Y)" />
                     </span>
-                    <Link href={c.href}>{c.label}</Link>
+                    <div className="li-dic">
+                      <a href={c.href}>{c.label}</a>
+                      <a href={c.href2}>{c.label2}</a>
+                    </div>
                   </li>
                 );
               })}
@@ -117,38 +126,35 @@ export default function Footer() {
           </div>
         </div>
 
-      <div className="ft-btm">
-  <span>© 2026 iMarrt. All rights reserved.</span>
+        <div className="ft-btm">
+          <span>© 2026 iMarrt. All rights reserved.</span>
 
-  <span className="ft-made">
-    Built by{" "}
-    
-    <Link
-      href="https://www.mecatronix.one"
-      target="_blank"
-      className="ft-link"
-    >
-      <span className="ft-brand">
-        
-        {/* Logo */}
-        <Image
-          src={ImgHelper.mecatronix.mecalogo}
-          alt="Mecatronix"
-          width={20}
-          height={20}
-          className="ft-logo"
-        />
+          <span className="ft-made">
+            Built by{" "}
+            <Link
+              href="https://www.mecatronix.one"
+              target="_blank"
+              className="ft-link"
+            >
+              <span className="ft-brand">
+                {/* Logo */}
+                <Image
+                  src={ImgHelper.mecatronix.mecalogo}
+                  alt="Mecatronix"
+                  width={20}
+                  height={20}
+                  className="ft-logo"
+                />
 
-        {/* Text */}
-        <span>
-          <span className="meca">Meca</span>
-          <span className="tronix">tronix</span>
-        </span>
-
-      </span>
-    </Link>
-  </span>
-</div>
+                {/* Text */}
+                <span>
+                  <span className="meca">Meca</span>
+                  <span className="tronix">tronix</span>
+                </span>
+              </span>
+            </Link>
+          </span>
+        </div>
       </footer>
       {/* ── CTA strip ── */}
       {/* <div className="ft-strip">
