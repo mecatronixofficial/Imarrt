@@ -59,6 +59,16 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
+          <Link href="#ourbrand" onClick={close}>
+            Our Brand
+          </Link>
+        </li>
+        <li>
+          <Link href="#collections" onClick={close}>
+            Our Collections
+          </Link>
+        </li>
+        <li>
           <Link href="#contact" onClick={close} className="n-cta">
             Enquire Now
           </Link>

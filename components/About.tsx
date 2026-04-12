@@ -54,7 +54,7 @@ export default function About() {
         {/* Text */}
         <div className="rv">
           <span className="sec-lbl">Who We Are</span>
-          <h2 className="sec-title">
+          <h2 className="sec-title ">
             Born in India&apos;s
             <br />
             Knitwear Capital

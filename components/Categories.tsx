@@ -56,7 +56,7 @@ export default function Categories() {
   const loopCategories = [...categories, ...categories];
 
   return (
-    <div className="ct-wrap">
+    <div className="ct-wrap" id="collections">
       <div className="ct-inner">
         <div className="rv">
           <span className="sec-lbl">Browse Range</span>
