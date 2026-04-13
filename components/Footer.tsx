@@ -157,7 +157,7 @@ export default function Footer() {
         </div>
       </footer>
       {/* ── CTA strip ── */}
-      {/* <div className="ft-strip">
+      <div className="ft-strip">
         <div className="ft-strip-inner">
           <span className="ft-strip-txt">
             Ready to place a bulk order? Let&apos;s talk.
@@ -166,7 +166,7 @@ export default function Footer() {
             Get a Quote →
           </Link>
         </div>
-      </div> */}
+      </div>
     </>
   );
 }
