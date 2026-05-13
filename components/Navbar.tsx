@@ -12,17 +12,15 @@ export default function Navbar() {
   return (
     <nav id="top" className={open ? "nav-open" : ""}>
       <div className="nav-id">
-        <Link href="#top" onClick={close}>
-          <Image
-            src={ImgHelper.logo.main}
-            alt="logo"
-            className="n-logo"
-            width={120} 
-            height={40} 
-            priority
-          />
-        </Link>
+       <div className="nav-contact">
+  <a href="tel:+919876543210" className="nav-phone">
+    +91 98765 43210
+  </a>
 
+  <a href="mailto:info@imarrt.com" className="nav-email">
+    info@imarrt.com
+  </a>
+</div>
         {/* Hamburger */}
         <button
           className="n-burger"

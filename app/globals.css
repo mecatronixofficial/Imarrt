@@ -1,4 +1,6 @@
-/* app/globals.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
 *,
 *::before,
 *::after {
@@ -24,7 +26,7 @@ html {
 }
 
 body {
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   background: var(--W);
   color: var(--B);
   overflow-x: hidden;
@@ -68,6 +70,21 @@ body {
 /* ════════════════════════════════
    NAV
    ════════════════════════════════ */
+
+.nav-contact{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-phone,
+.nav-email{
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0px 65px 0;
+}
 nav {
   position: fixed;
   top: 0;
@@ -92,10 +109,11 @@ nav {
 
 .n-logo {
   display: block;
-  width: 120px;
+  width: 300px;
   height: auto;
   position: relative;
   z-index: 2;
+  padding: auto;
 }
 
 .f-logobg {
@@ -210,7 +228,7 @@ nav {
 
 .mq-track {
   display: inline-block;
-  animation: mq 20s linear infinite;
+  animation: mq 80s linear infinite;
   white-space: nowrap;
 }
 
@@ -247,7 +265,7 @@ nav {
 }
 
 .sec-title {
-  font-family: var(--font-dancing);
+   font-family: 'Poppins', sans-serif;
   font-size: clamp(2.4rem, 3.8vw, 3.8rem);
   font-weight: 700;
   color: var(--B);
@@ -329,7 +347,7 @@ nav {
 }
 
 .h-title {
-  font-family: var(--font-dancing);
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(4rem, 7vw, 8.5rem);
   font-weight: 700;
   line-height: .95;
@@ -418,7 +436,7 @@ nav {
 }
 
 .st-num {
-  font-family: var(--font-dancing);
+  font-family: var(--font-poppins);
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 1;
@@ -466,12 +484,12 @@ nav {
 }
 
 .h-card .clogo {
-  font-family: var(--font-dancing);
+  font-family: 'Poppins', sans-serif;
   font-size: 4.2rem;
   font-weight: 700;
   color: var(--Y);
   display: block;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .h-card p {
@@ -506,7 +524,7 @@ nav {
 }
 
 .fc .fn {
-  font-family: var(--font-dancing);
+  font-family: var(--font-poppins);
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--Yd);
@@ -570,7 +588,7 @@ nav {
 }
 
 .ab-blogo {
-  font-family: var(--font-dancing);
+  font-family: var(--font-poppins);
   font-size: 5rem;
   font-weight: 700;
   color: var(--B);
@@ -605,7 +623,7 @@ nav {
 }
 
 .ab-bnum {
-  font-family: var(--font-dancing);
+  font-family: var(--font-poppins);
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 1;
@@ -670,7 +688,7 @@ nav {
    PRODUCTS
    ════════════════════════════════ */
 .pr-wrap {
-  background: #F2F2F2;
+  background: rgba(191, 215, 234, 0.2);
 }
 
 .pr-inner {
@@ -750,7 +768,7 @@ nav {
 }
 
 .pc-name {
-  font-family: var(--font-dancing);
+  font-family: var(--font-poppins);
   font-size: 1.7rem;
   font-weight: 700;
   color: var(--B);
@@ -1159,7 +1177,7 @@ nav {
 }
 
 .ct-name {
-  font-family: var(--font-dancing);
+  font-family: var(--font-poppins);
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--W);
@@ -1298,7 +1316,7 @@ nav {
 }
 
 .cf-title {
-  font-family: var(--font-dancing);
+  font-family: var(--font-poppins);
   font-size: 2rem;
   font-weight: 700;
   color: var(--B);
@@ -2290,9 +2308,129 @@ footer {
     gap: 32px;
   }
 
-  .ft-btm {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+ .ft-btm {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+} /* end mobile media query */
+
+
+/* ===== SIZE CHART PAGE ===== */
+
+.size-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--Y);
+}
+
+/* Left Image */
+.size-image-wrap {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.size-image {
+  object-fit: cover;
+}
+
+/* Right Content */
+.size-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+  background: var(--Y);
+}
+
+.size-tag {
+  display: inline-block;
+  width: fit-content;
+  background: var(--W);
+  color: #111;
+  padding: 8px 18px;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.size-title {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+.size-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Table */
+.size-table-wrap {
+  overflow-x: auto;
+}
+
+.size-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.size-table thead {
+  background: #111;
+}
+
+.size-table thead th {
+  color: #f8e22a;
+  padding: 18px;
+  text-align: left;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.size-table tbody tr {
+  border-bottom: 1px solid #eaeaea;
+  transition: 0.3s;
+}
+
+.size-table tbody tr:hover {
+  background: #fff8d6;
+}
+
+.size-table tbody td {
+  padding: 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .size-page {
+    grid-template-columns: 1fr;
+  }
+
+  .size-image-wrap {
+    min-height: 400px;
+  }
+
+  .size-content {
+    padding: 50px 24px;
+  }
+
+  .size-title {
+    font-size: 2.4rem;
   }
 }
+

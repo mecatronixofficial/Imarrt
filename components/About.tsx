@@ -4,13 +4,13 @@ import Image from "next/image";
 
 const features = [
   "Manufacturer & Supplier of Uniforms and Readymade Garments",
-  "Customized Orders Available (School, Corporate & Industrial Uniforms)",
-  "Export Quality Garments with International Standards",
-  "Branded & Unbranded Stocklots Available",
+  "Customized Orders(School, Corporate & Industrial Uniforms)",
+  "Quality Garments with International Standards",
+  "Branded & Unbranded Stocklots",
   "Knit & Woven Garments for All Age Groups",
   "Private Labeling & Custom Branding Accepted",
   "Bulk Orders with Competitive Pricing",
-  "Located at Rayapuram, Tirupur — 641 001",
+  "Located at Rayapuram, Tirupur — 641 601",
   "+91 86754 50005 · info@imarrt.com",
 ];
 
@@ -41,9 +41,9 @@ export default function About() {
         <Image
           src={ImgHelper.logo.main}
           alt="logo"
-          className="n-logo"
+          className=""
           width={120} // ✅ required in Next.js
-          height={40} // adjust based on your logo
+          height={90} // adjust based on your logo
           priority
         />
       </Link>
