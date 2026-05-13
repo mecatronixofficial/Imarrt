@@ -10,6 +10,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ScrollRevealProvider from '@/components/ScrollRevealProvider';
 import LogoPage from '@/components/LogoPage';
+import Collections from '@/components/Collections';
 
 
 
@@ -25,6 +26,7 @@ export default function Home() {
         <Strengths />
         <Process />
         <LogoPage />
+        <Collections/>
         <Categories />
         <Contact />
       </main>

@@ -24,7 +24,7 @@ const products = [
     imgClass: "t3",
     img: ImgHelper.products.exports,
     category: "Export Brand",
-    name: "Branded Exports",
+    name: "Trusted Exports",
     desc: "Garments crafted for international markets with premium finishing.",
   },
   {

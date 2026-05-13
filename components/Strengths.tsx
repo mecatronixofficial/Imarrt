@@ -1,7 +1,7 @@
 const strengths = [
   { num:'01', stroke:'#F5C800', iconBg:'rgba(245,200,0,.15)',size:'24',
     title:'Tirupur heritage', stat:'Since 2009',
-    text:" Our Mother Company Start in 1976 From Rayapuram, Tirupur — India's knitwear capital. Deep supply chains and decades of export expertise.",
+    text:" Our Mother Company Start in 1976 From Tirupur — India's knitwear capital. Deep supply chains and decades of export expertise.",
     icon: <><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></> },
   { num:'02', stroke:'#111', iconBg:'var(--LG)', size:'24',
     title:'Custom label ready', stat:'Private label',
