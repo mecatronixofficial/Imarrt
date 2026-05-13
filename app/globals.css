@@ -85,6 +85,22 @@ body {
   font-weight: 500;
   padding: 0px 65px 0;
 }
+.nav-phones {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-phone {
+  text-decoration: none;
+  color: #000;
+}
+
+
+
+
+
+
 nav {
   position: fixed;
   top: 0;
