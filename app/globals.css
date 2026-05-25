@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base reset (kept exactly from original) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --Y: #F8E22A;
+  --Yd: #D4A800;
+  --Yp: #FFF8D6;
+  --B: #111111;
+  --Bs: #1E1E1E;
+  --G: #2B7A2B;
+  --W: #FFFFFF;
+  --Gr: #666666;
+  --LG: #F5F5F5;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--W);
+  color: var(--B);
+  overflow-x: hidden;
+}
+
+/* Scroll-reveal — controlled by IntersectionObserver in useScrollReveal */
+.rv {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .7s, transform .7s;
+}
+
+.rv.on {
+  opacity: 1;
+  transform: none;
+}
+
+/* Keyframes used by Tailwind animation utilities below + inline animations */
+@keyframes fup {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes mq {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes autoScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Hide scrollbar but keep scroll */
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-hidden {
+  -ms-overflow-style: none; /* IE + Edge */
+  scrollbar-width: none; /* Firefox */
+}
