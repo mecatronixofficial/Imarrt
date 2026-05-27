@@ -118,7 +118,7 @@ export default function LogoPage() {
               "
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))",
+                  "linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.18))",
               }}
             >
               {/* ::before gradient overlay */}
