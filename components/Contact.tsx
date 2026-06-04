@@ -26,42 +26,65 @@ const contactInfo = [
   },
 ];
 
-// Reusable input/select/textarea classes
 const fieldBase =
   "border-[1.5px] border-[#E0E0E0] rounded-[4px] px-[15px] py-3 font-poppins text-[0.84rem] text-[#111111] bg-white outline-none transition-colors duration-[250ms] focus:border-[#D4A800]";
 
 const labelBase =
   "text-[0.62rem] font-bold tracking-[0.15em] uppercase text-[#666666]";
 
+const initialFormData = {
+  name: "",
+  address: "",
+  company: "",
+  category: "Adults Garments",
+  email: "",
+  phone: "",
+  quantity: "",
+  message: "",
+};
+
 export default function Contact() {
+  const [formData, setFormData] = useState(initialFormData);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    const form = e.currentTarget;
-    const data = {
-      name: (form[0] as HTMLInputElement).value,
-      address: (form[1] as HTMLInputElement).value,
-      company: (form[2] as HTMLInputElement).value,
-      category: (form[3] as HTMLSelectElement).value,
-      email: (form[4] as HTMLInputElement).value,
-      phone: (form[5] as HTMLInputElement).value,
-      quantity: (form[6] as HTMLInputElement).value,
-      message: (form[7] as HTMLTextAreaElement).value,
-    };
+    setSubmitted(false);
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setLoading(false);
-    if (res.ok) {
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.message || "Failed to send enquiry.");
+        return;
+      }
+
       setSubmitted(true);
-      form.reset();
+      setFormData(initialFormData);
+
       setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      console.error("Fetch error:", error);
+      alert("Network error. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -75,7 +98,7 @@ export default function Contact() {
           max-[600px]:px-6 max-[600px]:py-14 max-[600px]:gap-10
         "
       >
-        {/* Info */}
+        {/* Left — Info */}
         <div className="rv">
           <span
             className="
@@ -86,6 +109,7 @@ export default function Contact() {
           >
             Get In Touch
           </span>
+
           <h2
             className="
               font-poppins font-bold text-[#111111] leading-[1.1] mb-4
@@ -94,6 +118,7 @@ export default function Contact() {
           >
             Place Your Order Today
           </h2>
+
           <p className="text-[0.87rem] leading-[1.9] text-[#666666] mb-[34px]">
             Ready to source premium garments from Tirupur? Our team responds
             within 24 hours with pricing and details.
@@ -118,6 +143,7 @@ export default function Contact() {
                   >
                     <Icon size={24} />
                   </div>
+
                   <div>
                     <div className="text-[0.6rem] font-bold tracking-[0.17em] uppercase text-black/[0.42] mb-[3px]">
                       {item.label}
@@ -133,6 +159,7 @@ export default function Contact() {
               );
             })}
           </div>
+
           <div
             className="
               flex items-center gap-2 mt-auto pt-8
@@ -145,7 +172,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Form */}
+        {/* Right — Form */}
         <div className="rv">
           <div
             className="
@@ -162,6 +189,7 @@ export default function Contact() {
             >
               Send an Enquiry
             </div>
+
             <p className="text-[0.8rem] text-[#666666] mb-7">
               Fill in the details and we&apos;ll get back to you with a quote.
             </p>
@@ -176,77 +204,111 @@ export default function Contact() {
                 <div className="flex flex-col gap-[6px]">
                   <label className={labelBase}>Your Name</label>
                   <input
+                    name="name"
                     type="text"
                     placeholder="Full name"
                     required
+                    value={formData.name}
+                    onChange={handleChange}
                     className={fieldBase}
                   />
                 </div>
+
                 <div className="flex flex-col gap-[6px]">
-                  <label className={labelBase}> Your Address</label>
+                  <label className={labelBase}>Your Address</label>
                   <input
+                    name="address"
                     type="text"
                     placeholder="Your Address & Pincode"
+                    value={formData.address}
+                    onChange={handleChange}
                     className={fieldBase}
                   />
                 </div>
+
                 <div className="flex flex-col gap-[6px]">
                   <label className={labelBase}>Company</label>
                   <input
+                    name="company"
                     type="text"
                     placeholder="Brand / Company"
+                    value={formData.company}
+                    onChange={handleChange}
                     className={fieldBase}
                   />
                 </div>
+
                 <div className="flex flex-col gap-[6px]">
                   <label className={labelBase}>Category</label>
-                  <select className={fieldBase}>
-                    <option>Adults Garments</option>
-                    <option>Children&apos;s Wear</option>
-                    <option>Infants Wear</option>
-                    <option>Mixed / Custom</option>
+                  <select
+                    name="category"
+                    value={formData.category}
+                    onChange={handleChange}
+                    className={fieldBase}
+                  >
+                    <option value="Adults Garments">Adults Garments</option>
+                    <option value="Children's Wear">Children&apos;s Wear</option>
+                    <option value="Infants Wear">Infants Wear</option>
+                    <option value="Mixed / Custom">Mixed / Custom</option>
                   </select>
                 </div>
+
                 <div className="flex flex-col gap-[6px] col-span-2 max-[600px]:col-span-1">
                   <label className={labelBase}>Email Address</label>
                   <input
+                    name="email"
                     type="email"
                     placeholder="your@email.com"
                     required
+                    value={formData.email}
+                    onChange={handleChange}
                     className={fieldBase}
                   />
                 </div>
+
                 <div className="flex flex-col gap-[6px]">
                   <label className={labelBase}>Phone Number</label>
                   <input
+                    name="phone"
                     type="tel"
                     placeholder="+91 00000 00000"
+                    value={formData.phone}
+                    onChange={handleChange}
                     className={fieldBase}
                   />
                 </div>
+
                 <div className="flex flex-col gap-[6px]">
                   <label className={labelBase}>Required Quantity (pcs)</label>
                   <input
+                    name="quantity"
                     type="text"
                     placeholder="e.g. 500"
+                    value={formData.quantity}
+                    onChange={handleChange}
                     className={fieldBase}
                   />
                 </div>
+
                 <div className="flex flex-col gap-[6px] col-span-2 max-[600px]:col-span-1">
                   <label className={labelBase}>Requirements</label>
                   <textarea
+                    name="message"
                     placeholder="Style, fabric, timeline, labeling needs..."
+                    value={formData.message}
+                    onChange={handleChange}
                     className={`${fieldBase} h-[108px] resize-none`}
                   />
                 </div>
               </div>
+
               <button
                 type="submit"
                 disabled={loading}
                 className="
                   w-full bg-[#F8E22A] text-[#111111] border-0 rounded-[4px]
                   py-[15px] font-poppins text-[0.76rem] font-bold
-                  tracking-[0.17em] uppercase cursor-pointer mt-1
+                  tracking-[0.17em] uppercase cursor-pointer mt-5
                   transition-[background,transform] duration-300
                   hover:bg-[#f5f82a] hover:-translate-y-[2px]
                   disabled:opacity-70 disabled:cursor-not-allowed
